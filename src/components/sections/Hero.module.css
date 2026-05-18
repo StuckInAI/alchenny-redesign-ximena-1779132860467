@@ -1,0 +1,115 @@
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.imageWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: slowZoom 2400ms var(--ease) both;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 248, 240, 0.4) 0%, rgba(61, 40, 29, 0.15) 30%, rgba(61, 40, 29, 0.55) 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: var(--color-cream);
+  padding-top: 80px;
+  padding-bottom: 120px;
+  max-width: 1280px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 800ms var(--ease) 200ms forwards;
+}
+
+.title {
+  font-family: var(--font-serif);
+  color: var(--color-cream);
+  font-size: clamp(56px, 11vw, 144px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 900ms var(--ease) 400ms forwards;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--color-cream-warm);
+}
+
+.lede {
+  max-width: 480px;
+  font-size: clamp(16px, 1.8vw, 19px);
+  line-height: 1.6;
+  color: rgba(255, 248, 240, 0.92);
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 900ms var(--ease) 600ms forwards;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeUp 900ms var(--ease) 800ms forwards;
+}
+
+.actions :global(.btn) {
+  border-color: var(--color-cream);
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  z-index: 1;
+  color: var(--color-cream);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 1000ms var(--ease) 1400ms forwards;
+}
+
+.line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--color-cream) 0%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 88px);
+  }
+}
